@@ -1,5 +1,5 @@
 <?php
-$json_string = file_get_contents("http://api.wunderground.com/api/dc6a2e8247981d34/astronomy/amalnac/geolookup/conditions/q/ID/Mugassari.json"); 
+$json_string = file_get_contents("http://api.wunderground.com/api/7629d8e10b95ce59/astronomy/amalnac/geolookup/conditions/q/ID/Makassar.json"); 
 $parsed_json = json_decode($json_string); 
 $location = $parsed_json->{'location'}->{'city'}; 
 $weather = $parsed_json->{'current_observation'}->{'weather'};
