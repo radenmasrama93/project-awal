@@ -1,0 +1,34 @@
+<?php
+$json_string = file_get_contents("http://api.wunderground.com/api/dc6a2e8247981d34/astronomy/amalnac/geolookup/conditions/q/ID/Mugassari.json"); 
+$parsed_json = json_decode($json_string); 
+$location = $parsed_json->{'location'}->{'city'}; 
+$weather = $parsed_json->{'current_observation'}->{'weather'};
+$feelslike_c= $parsed_json->{'current_observation'}->{'feelslike_c'};
+$wind_degrees= $parsed_json->{'current_observation'}->{'wind_degrees'};
+$windchill_c= $parsed_json->{'current_observation'}->{'windchill_c'};
+$dewpoint_c= $parsed_json->{'current_observation'}->{'dewpoint_c'};
+$visibility_km= $parsed_json->{'current_observation'}->{'visibility_km'};
+$UV= $parsed_json->{'current_observation'}->{'UV'};
+echo "1. Lokasi: ${location}\n";
+echo "<br>";
+echo "2. Cuaca: ${weather}\n";
+echo "<br>";
+echo "3. Angin : ${wind_degrees} \n";
+echo "<br>";
+echo "4. Suhu Panas : ${feelslike_c} celcius \n";
+echo "<br>";
+echo "5. Suhu Dingin : ${windchill_c} celcius \n";
+echo "<br>";
+echo "6. Embun : ${dewpoint_c}celcius\n";
+echo "<br>";
+echo "7. Visibilitas : ${visibility_km}kilometers\n";
+echo "<br>";
+echo "8. UV : ${UV}\n";
+echo "<br>";
+$moonphase = $parsed_json->{"moon_phase"}->{"phaseofMoon"};
+	$moonphase1 = $parsed_json->{"moon_phase"}->{"percentIlluminated"};
+	$moonphase2 = $parsed_json->{"moon_phase"}->{"hemisphere"};
+  echo "9. Fase bulan : ${moonphase}<br>";
+  echo "10. Penampakan Bulan : ${moonphase1} (persen)<br>";
+  echo "11. Bagian Bumi : ${moonphase2}<br>";
+?>
