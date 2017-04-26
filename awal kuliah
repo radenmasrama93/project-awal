@@ -26,9 +26,8 @@ echo "<br>";
 echo "8. UV : ${UV}\n";
 echo "<br>";
 $moonphase = $parsed_json->{"moon_phase"}->{"phaseofMoon"};
-	$moonphase1 = $parsed_json->{"moon_phase"}->{"percentIlluminated"};
-	$moonphase2 = $parsed_json->{"moon_phase"}->{"hemisphere"};
-  echo "9. Fase bulan : ${moonphase}<br>";
-  echo "10. Penampakan Bulan : ${moonphase1} (persen)<br>";
-  echo "11. Bagian Bumi : ${moonphase2}<br>";
+$moonphase1 = $parsed_json->{"moon_phase"}->{"percentIlluminated"};$moonphase2 = $parsed_json->{"moon_phase"}->{"hemisphere"};
+echo "9. Fase bulan : ${moonphase}<br>";
+echo "10. Penampakan Bulan : ${moonphase1} (persen)<br>";
+echo "11. Bagian Bumi : ${moonphase2}<br>";
 ?>
